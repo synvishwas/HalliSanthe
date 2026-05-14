@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF8E7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C0392B"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:paddingTop="16dp" android:paddingBottom="16dp">
+
+        <TextView android:id="@+id/btnBackReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←" android:textSize="22sp"
+            android:textColor="#FFFFFF" android:paddingEnd="12dp"/>
+
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="⭐ Reviews"
+            android:textSize="20sp" android:textStyle="bold"
+            android:textColor="#FFFFFF"/>
+
+        <TextView android:id="@+id/tvAvgRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0 ⭐"
+            android:textSize="14sp"
+            android:textColor="#FFCDD2"/>
+
+    </LinearLayout>
+
+    <!-- Add Review Card -->
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✍️ Write a Review"
+                android:textSize="15sp" android:textStyle="bold"
+                android:textColor="#4E342E"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Name"
+                android:textSize="13sp" android:textStyle="bold"
+                android:textColor="#795548"/>
+            <EditText android:id="@+id/etReviewerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your name"
+                android:inputType="text"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐ Rating"
+                android:textSize="13sp" android:textStyle="bold"
+                android:textColor="#795548"/>
+
+            <!-- Star Rating -->
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1.0"
+                android:rating="5"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="12dp"
+                style="?android:attr/ratingBarStyle"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💬 Comment"
+                android:textSize="13sp" android:textStyle="bold"
+                android:textColor="#795548"/>
+            <EditText android:id="@+id/etReviewComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Share your experience..."
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:gravity="top"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="12dp"/>
+
+            <Button android:id="@+id/btnSubmitReview"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="⭐ Submit Review"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:backgroundTint="#F5A623"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView android:id="@+id/tvNoReviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No reviews yet. Be the first!"
+        android:textSize="14sp" android:textColor="#9E9E9E"
+        android:gravity="center" android:padding="16dp"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerReviews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:clipToPadding="false"/>
+
+</LinearLayout>

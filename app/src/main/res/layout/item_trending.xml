@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="150dp"
+    android:layout_height="180dp"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#FFF8E7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp">
+
+            <ImageView
+                android:id="@+id/imgTrending"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/badge_trending"
+                android:textSize="9sp"
+                android:textColor="#FFFFFF"
+                android:background="#C0392B"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_gravity="top|start"
+                android:layout_margin="6dp"/>
+
+            <TextView
+                android:id="@+id/tvTrendingViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👁️ 0"
+                android:textSize="9sp"
+                android:textColor="#FFFFFF"
+                android:background="#66000000"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="4dp"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvTrendingName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="6dp"
+            android:text="Product"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#4E342E"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/tvTrendingPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="2dp"
+            android:text="₹ 0"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#F5A623"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

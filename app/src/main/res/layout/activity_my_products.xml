@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF8E7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C0392B"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:paddingTop="16dp" android:paddingBottom="16dp">
+
+        <TextView android:id="@+id/btnBackMyProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←" android:textSize="22sp"
+            android:textColor="#FFFFFF" android:paddingEnd="12dp"/>
+
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/my_products_title"
+            android:textSize="20sp" android:textStyle="bold"
+            android:textColor="#FFFFFF"/>
+
+        <TextView android:id="@+id/tvMyProductCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 items" android:textSize="12sp"
+            android:textColor="#FFCDD2"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/layoutPhoneInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/access_my_products"
+                android:textSize="18sp" android:textStyle="bold"
+                android:textColor="#4E342E"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/access_subtitle"
+                android:textSize="13sp" android:textColor="#9E9E9E"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_phone"
+                android:textSize="13sp" android:textStyle="bold"
+                android:textColor="#795548"/>
+
+            <EditText android:id="@+id/etMyPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_hint"
+                android:inputType="phone" android:maxLength="10"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_pin"
+                android:textSize="13sp" android:textStyle="bold"
+                android:textColor="#795548"/>
+
+            <EditText android:id="@+id/etMyPin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pin_hint"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="16dp"/>
+
+            <Button android:id="@+id/btnFindMyProducts"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/btn_access"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#C0392B"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView android:id="@+id/tvNoMyProducts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_my_products"
+        android:textSize="15sp" android:textColor="#9E9E9E"
+        android:gravity="center" android:padding="32dp"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMyProducts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:visibility="gone"/>
+
+</LinearLayout>

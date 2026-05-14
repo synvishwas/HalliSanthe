@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8E7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- IMAGE FRAME -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="320dp">
+
+            <ImageView
+                android:id="@+id/imgProductDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"/>
+
+            <TextView
+                android:id="@+id/tvSoldBadge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="SOLD"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:background="#AA000000"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#66000000"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <TextView android:id="@+id/btnBack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="← Back"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView android:id="@+id/btnShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📤 Share"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:background="#44FFFFFF"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- MAIN CONTENT CARD -->
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Tags Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView android:id="@+id/tvDetailCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp" android:textColor="#FFFFFF"
+                        android:paddingStart="12dp" android:paddingEnd="12dp"
+                        android:paddingTop="4dp" android:paddingBottom="4dp"
+                        android:background="@drawable/badge_background"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView android:id="@+id/tvDetailCondition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp" android:textColor="#27AE60"
+                        android:paddingStart="12dp" android:paddingEnd="12dp"
+                        android:paddingTop="4dp" android:paddingBottom="4dp"
+                        android:background="@drawable/green_badge_background"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- ✅ Delivery Tag — Step 12 -->
+                    <TextView android:id="@+id/tvDeliveryTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🚚 Delivery"
+                        android:textSize="11sp" android:textColor="#FFFFFF"
+                        android:paddingStart="12dp" android:paddingEnd="12dp"
+                        android:paddingTop="4dp" android:paddingBottom="4dp"
+                        android:background="@drawable/discount_background"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <TextView android:id="@+id/tvDetailName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp" android:textStyle="bold"
+                    android:textColor="#4E342E"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView android:id="@+id/tvDetailPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="26sp" android:textStyle="bold"
+                    android:textColor="#F5A623"
+                    android:layout_marginTop="6dp"/>
+
+                <!-- ✅ Discount text — Step 10 -->
+                <TextView android:id="@+id/tvDetailDiscount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" android:textColor="#27AE60"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+                <TextView android:id="@+id/tvDetailLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp" android:textColor="#795548"
+                    android:layout_marginTop="4dp"/>
+
+                <!-- ✅ Stats Row — Steps 7, 8, 17 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView android:id="@+id/tvDetailViewCount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="👁️ 0 views"
+                        android:textSize="11sp" android:textColor="#9E9E9E"/>
+
+                    <TextView android:id="@+id/tvDetailEnquiry"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="💬 0 enquiries"
+                        android:textSize="11sp" android:textColor="#9E9E9E"/>
+
+                    <TextView android:id="@+id/tvDetailRating"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="⭐ 0.0"
+                        android:textSize="11sp" android:textColor="#F5A623"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                    android:layout_height="1dp" android:background="#E0E0E0"
+                    android:layout_marginTop="12dp" android:layout_marginBottom="12dp"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_product"
+                    android:textSize="14sp" android:textStyle="bold"
+                    android:textColor="#795548"/>
+
+                <TextView android:id="@+id/tvDetailDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp" android:textColor="#757575"
+                    android:layout_marginTop="6dp"
+                    android:lineSpacingExtra="4dp"/>
+
+                <View android:layout_width="match_parent"
+                    android:layout_height="1dp" android:background="#E0E0E0"
+                    android:layout_marginTop="12dp" android:layout_marginBottom="12dp"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/meet_artisan"
+                    android:textSize="14sp" android:textStyle="bold"
+                    android:textColor="#795548"/>
+
+                <LinearLayout android:id="@+id/layoutArtisanProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_background"
+                    android:padding="10dp">
+
+                    <LinearLayout android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView android:id="@+id/tvDetailSellerName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp" android:textColor="#4E342E"
+                            android:textStyle="bold"/>
+
+                        <TextView android:id="@+id/tvDetailSellerPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp" android:textColor="#757575"
+                            android:layout_marginTop="2dp"/>
+
+                    </LinearLayout>
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/view_profile"
+                        android:textSize="12sp" android:textColor="#C0392B"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ✅ Reviews Button — Step 17 -->
+        <Button android:id="@+id/btnReviews"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="⭐ See Reviews"
+            android:textColor="#F5A623"
+            android:textSize="14sp"
+            android:backgroundTint="#FFF8E7"/>
+
+        <!-- SIMILAR PRODUCTS — Step 18 -->
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🛍️ Similar Products"
+            android:textSize="15sp" android:textStyle="bold"
+            android:textColor="#795548"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSimilar"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:clipToPadding="false"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- WHATSAPP BUTTON -->
+        <Button android:id="@+id/btnMessageSeller"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/btn_whatsapp"
+            android:textColor="#FFFFFF" android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="#25D366"/>
+
+        <!-- CALL BUTTON -->
+        <Button android:id="@+id/btnCallSeller"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/btn_call"
+            android:textColor="#C0392B" android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="#FFFFFF"/>
+
+        <!-- ✅ REPORT BUTTON — Step 6 -->
+        <Button android:id="@+id/btnReport"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:text="🚩 Report this Product"
+            android:textColor="#9E9E9E"
+            android:textSize="13sp"
+            android:backgroundTint="#F5F5F5"/>
+
+    </LinearLayout>
+
+</ScrollView>
